@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to Vecta Corp.</title>
+    <!-- Normal style sheet used for layout and general formatting. -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		// WRITE YOUR CODE HERE
+        
+         $(document).ready(function() {
+		$.ajax({
+           type: "get",
+            url: "json.json",
+            
+            datatype: "json",
+            beforeSend: function() {$("#result").html("Loading....");},
+            error: function(xhr, status, error) {
+                $("<div title='Error'>" + xhr.status + " - " + error + "</div>").dialog();
+            },
+            success: function(data) {
+                $("#result").html("");
+                $.each(data, function() {
+                    $.each(this, function(key, value){
+                        $("#result").append(
+                            "<b>" + "Name: " + "</b>" + value.name + "<br>" +
+                            "<b>" + "Title: " + "</b>" + value.title + "<br>" +
+                            "<b>" + "Bio: " + "</b>" + value.bio + "<br><br>"
+                        );
+                    });
+                });
+            }
+        });
+    });
+        
+    </script>
+</head>
+
+<body>
+<section id="container">
+    <header></header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <section id="content">
+        <h2>The Vecta Corp. Management Team</h2>
+
+		<div id="result"></div>
+    </section>
+    
+    <footer></footer>
+</section>
+</body>
+</html>

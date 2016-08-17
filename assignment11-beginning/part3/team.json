@@ -1,0 +1,28 @@
+{"teammembers": [
+    {
+        "name":"Elham Akbari",
+        "department":"Computer science",
+        "position":"Programing"
+    },
+    {
+        "name":"Shahram Moafipour",
+        "department":"bussines",
+        "position":"manager"
+    },
+    {
+        "name":"Afsaneh Aghbolagh",
+        "department":"hard wear department",
+        "position":"IT"
+    },
+    {
+        "name":"Shahrooz Zomorodi",
+        "department":"engeniaring",
+        "position":"Contract"
+    },
+    {
+        "name":"Sanaz Samavati",
+        "department":"Operation",
+        "position":"Customer service"
+    }
+    
+]}
